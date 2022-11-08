@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="section-body">
+      <img src="./images/bg-main-desktop.png" class="desktop" />
+      <img src="./images/bg-main-mobile.png" class="mobile" />
+      <form action="#" class="form" id="main-page">
+        <label for="name"> CardHolder Name</label>
+        <input
+          type="text"
+          class="name forms"
+          id="name"
+          placeholder="e.g. Jane Appleseed"
+          required
+        />
+        <span role="alert" id="nameError" aria-hidden="true">
+          Please enter Full name
+        </span>
+
+        <label for="number">Card Number</label>
+        <input
+          type="text"
+          class="number"
+          id="number"
+          placeholder="e.g. 1234 5678 9123 0000"
+          required
+          maxlength="16"
+        />
+        <span role="alert" id="numError" aria-hidden="true">
+          wrong format, numbers only
+        </span>
+
+        <div class="card-details">
+          <div>
+            <label for="expdate">Exp. Date [MM/YY]</label>
+            <div>
+              <input
+                type="text"
+                class="expyear"
+                id="month"
+                placeholder="MM"
+                required
+                maxlength="2"
+                pattern="[0-9]*"
+              />
+
+              <input
+                type="text"
+                class="expyear"
+                id="year"
+                placeholder="YY"
+                required
+                maxlength="2"
+                pattern="[0-9]*"
+              />
+              <span role="alert" id="expmonthError" aria-hidden="true">
+                cant be blank
+              </span>
+            </div>
+          </div>
+          <div class="cvv">
+            <label for="cvv">cvc</label>
+            <div>
+              <input
+                type="text"
+                id="cvv"
+                class="cvv"
+                placeholder="e.g. 123"
+                required
+                maxlength="3"
+                pattern="[0-9]*"
+              />
+            </div>
+            <span role="alert" id="cvvError" aria-hidden="true">
+              cant be blank
+            </span>
+          </div>
+        </div>
+
+        <input type="button" value="confirm" id="submit" class="submit-btn" />
+      </form>
+    </div>
+    <div>
+      <img src="./images/bg-card-front.png" class="card-front" />
+    </div>
+    <div>
+      <img src="./images/bg-card-back.png" class="card-back" />
+    </div>
+    <img src="./images/card-logo.svg" class="circle" />
+
+    <div>
+      <form>
+        <input
+          type="text"
+          class="cardNum card"
+          id="cardNum"
+          placeholder="0000 0000 0000 0000"
+          readonly
+        />
+        <input
+          type="text"
+          class="cardName card"
+          id="cardName"
+          placeholder="JANE APPLESEED"
+          readonly
+          />
+        <div class="expiry card">
+          <input
+            type="text"
+            class="cardmonth date"
+            id="cardMonth"
+            placeholder="00"
+            maxlength="2"
+            pattern="[0-9]*"
+            readonly
+          />
+          <input
+            type="text"
+            class="cardyear date"
+            id="cardYear"
+            placeholder="00"
+            maxlength="2"
+            pattern="[0-9]*"
+            readonly
+          />
+        </div>
+        <input
+          type="text"
+          class="cardCvv card"
+          id="cardCvv"
+          placeholder="000"
+          maxlength="3"
+          pattern="[0-9]*"
+          readonly
+        />
+      </form>
+
+      <div class="thankyou-page hide" id="thankyou-page">
+        <div class="thankyou-text">
+          <img src="./images/icon-complete.svg" width="40px" height="40px" />
+          <h1>Thank you!</h1>
+          <p>We've added your card details!!</p>
+        </div>
+        <input type="button" value="continue" id="thankyou" class="submit-btn continue" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

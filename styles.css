@@ -1,0 +1,383 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Mukta", sans-serif;
+}
+
+h1,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.desktop {
+  width: 30%;
+  height: 100vh;
+}
+
+.mobile {
+  display: none;
+}
+
+.section-body {
+  display: flex;
+  align-items: center;
+  gap: 20rem;
+}
+
+.form {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.expyear {
+  width: 40%;
+}
+
+.card-details {
+  display: flex;
+}
+
+label {
+  font-size: 18px;
+  color: hsl(278, 68%, 11%);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+input.invalid {
+  border-color: red;
+}
+
+input {
+  text-transform: uppercase;
+  border: 1px solid hsl(270, 3%, 87%);
+  border-radius: 8px;
+  padding: 0.5rem;
+  height: 3rem;
+  text-align: left;
+  margin-top: 0.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  font-size: 18px;
+  font-family: "Mukta", sans-serif;
+}
+
+::placeholder {
+  color: hsl(279, 6%, 55%);
+}
+
+.submit-btn {
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.card-front {
+  position: absolute;
+  top: 5rem;
+  left: 8rem;
+  height: auto;
+  width: 25rem;
+  box-shadow: -3px 103px 400px 12px rgba(142, 133, 147, 0.75);
+  -webkit-box-shadow: -3px 103px 400px 12px rgba(142, 133, 147, 0.75);
+  -moz-box-shadow: -3px 103px 400px 12px rgba(142, 133, 147, 0.75);
+}
+
+.card-back {
+  position: absolute;
+  top: 21rem;
+  left: 13rem;
+  height: auto;
+  width: 25rem;
+}
+
+.circle {
+  position: absolute;
+  top: 6.5rem;
+  left: 9.5rem;
+  width: 5%;
+}
+
+#nameError,
+#numError,
+#expmonthError,
+#expyearError,
+#cvvError {
+  display: none;
+  font-size: 0.5rem;
+  color: red;
+}
+
+#nameError.visible {
+  display: block;
+}
+
+#numError.visible {
+  display: block;
+}
+
+#expmonthError.visible {
+  display: block;
+}
+
+#expyearError.visible {
+  display: block;
+}
+
+#cvvError.visible {
+  display: block;
+}
+
+.card::placeholder {
+  color: white;
+  font-size: 14px;
+}
+
+.card {
+  border: none;
+  color: white;
+  border: none;
+  background-color: transparent;
+  height: 1.2rem;
+  position: absolute;
+}
+
+.cardNum {
+  width: 60%;
+  top: 11rem;
+  left: 9rem;
+  height: 3rem;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 5px;
+  border: none;
+}
+
+.cardNum::placeholder {
+  font-size: 24px;
+}
+
+.cardName {
+  top: 15rem;
+  left: 9rem;
+  width: 10rem;
+}
+
+.cardmonth,
+.cardyear {
+  color: white;
+  width: 2.1rem;
+  height: 1.5rem;
+  background-color: transparent;
+  border: none;
+}
+
+.expiry {
+  color: white;
+  position: absolute;
+  top: 15rem;
+  left: 27rem;
+  width: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.expiry::after {
+  content: "/";
+  position: absolute;
+  left: 1.7rem;
+  top: 0.5rem;
+  color: white;
+}
+
+.date::placeholder {
+  color: white;
+  font-size: 14px;
+}
+
+input.expiry {
+  color: white;
+  float: left;
+}
+
+.cardCvv {
+  top: 26.6rem;
+  left: 32.2rem;
+  width: 3rem;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.thankyou-page {
+  position: absolute;
+  left: 61.1%;
+  top: 40%;
+  text-align: center;
+  align-items: center;
+}
+
+.thankyou-page > input {
+  width: 200%;
+  margin-left: -50%;
+}
+
+.thankyou-text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.thankyou-text > h1 {
+  color: hsl(278, 68%, 11%);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.thankyou-text > p {
+  color: hsl(279, 6%, 55%);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .desktop {
+    display: none;
+  }
+
+  .section-body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile {
+    margin: auto;
+    display: block;
+    width: 770px;
+    height: 440px;
+  }
+
+  .card {
+    position: absolute;
+  }
+
+  .card-back {
+    display: block;
+    top: 4.6rem;
+    left: 9rem;
+    width: 37rem;
+    height: 18rem;
+    filter: none;
+  }
+
+  .cardCvv {
+    left: 39rem;
+    top: 12.5rem;
+    width: 5rem;
+  }
+
+  .cardCvv::placeholder {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .card-front {
+    z-index: 1;
+    display: block;
+    top: 14.9rem;
+    left: 3.5rem;
+    width: 37rem;
+    height: 18rem;
+  }
+
+  .circle {
+    z-index: 3;
+    top: 17.5rem;
+    left: 6rem;
+    width: 90px;
+    height: auto;
+  }
+
+  .cardNum {
+    z-index: 3;
+    top: 24rem;
+    left: 6rem;
+    width: 60%;
+    height: 2.5rem;
+  }
+
+  .cardNum::placeholder {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 5px;
+  }
+
+  .cardName {
+    z-index: 3;
+    top: 28rem;
+    left: 6rem;
+    width: 50%;
+    height: 2rem;
+  }
+
+  .cardName::placeholder {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 2px;
+  }
+
+  .expiry {
+    z-index: 3;
+    top: 28rem;
+    left: 32rem;
+    width: 6rem;
+    height: 2rem;
+  }
+
+  .cardmonth,
+  .cardyear {
+    width: 3rem;
+  }
+
+  .date::placeholder {
+    font-size: 22px;
+  }
+
+  .expiry::after {
+    left: 2.5rem;
+  }
+
+  .form {
+    width: fit-content;
+    margin-top: -10rem;
+  }
+
+  .thankyou-page {
+    padding: 5rem 0;
+    top: 35rem;
+    left: 14rem;
+  }
+
+  .thankyou-page > input {
+    width: 20rem;
+    margin-left: 5%;
+    text-transform: capitalize;
+  }
+
+  .thankyou-text > h1 {
+    margin: 20px 0;
+    font-weight: 700;
+    color: hsl(278, 68%, 11%);
+  }
+}
